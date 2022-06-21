@@ -21,7 +21,12 @@ public class PessoaDAO {
     }
 
     public void delete(Pessoa pessoa){
-        lista.remove(pessoa);
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i).getId() == pessoa.getId()) {
+                lista.remove(i);
+                break;
+            }
+        }
     }
 
 }
